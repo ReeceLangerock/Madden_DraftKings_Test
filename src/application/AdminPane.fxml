@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="856.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminPaneController">
+  <tabs>
+    <Tab closable="false" text="Manage Week">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Currently in Week: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="runCalculationButton" layoutX="14.0" layoutY="222.0" mnemonicParsing="false" text="Run Calculations" />
+                  <Button fx:id="lockTeamLineupButton" layoutX="14.0" layoutY="150.0" mnemonicParsing="false" text="Lock Team Lineups" />
+                  <Button fx:id="advanceWeekButton" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" text="Advance Week" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="manageCSVTab" closable="false" text="Manage CSV">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="497.0" prefWidth="746.0">
+               <children>
+                  <ComboBox fx:id="weekSelectorForImportComboBox" layoutX="12.0" layoutY="40.0" prefWidth="150.0" promptText="Select Week" />
+                  <Button fx:id="importWeeklyStatsButton" layoutX="14.0" layoutY="109.0" mnemonicParsing="false" text="Import Weekly Stats" />
+                  <Button fx:id="importPlayerListButton" layoutX="12.0" layoutY="172.0" mnemonicParsing="false" text="Import Player List" />
+                  <Label layoutX="14.0" layoutY="272.0" text="Select Week of Stats to Edit">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="weekSelectorForEditComboBox" layoutX="12.0" layoutY="306.0" prefWidth="150.0" promptText="Select Week" />
+                  <Button fx:id="saveEditedChangesButton" layoutX="12.0" layoutY="347.0" mnemonicParsing="false" text="Save Edited Changes" />
+                  <Label layoutX="14.0" layoutY="14.0" text="Week of Stats to Import">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Separator layoutX="12.0" layoutY="161.0" prefWidth="200.0" />
+                  <Separator layoutX="14.0" layoutY="260.0" prefWidth="200.0" />
+                  <TableView fx:id="manageCSVTableView" layoutX="242.0" layoutY="14.0" prefHeight="532.0" prefWidth="600.0">
+                    <columns>
+                      <TableColumn fx:id="playerNameCol" prefWidth="93.0" text="Player Name" />
+                      <TableColumn fx:id="positionCol" prefWidth="58.0" text="Position" />
+                        <TableColumn fx:id="teamCol" prefWidth="44.0" text="Team" />
+                        <TableColumn fx:id="overallCol" prefWidth="53.0" text="Overall" />
+                        <TableColumn fx:id="passYardsCol" prefWidth="34.0" text="pY" />
+                        <TableColumn fx:id="passTDCol" prefWidth="31.0" text="pTD" />
+                        <TableColumn fx:id="passIntCol" prefWidth="40.0" text="pInt" />
+                        <TableColumn fx:id="rushYardsCol" prefWidth="30.0" text="ruY" />
+                        <TableColumn fx:id="rushTDCol" prefWidth="39.0" text="ruTD" />
+                        <TableColumn fx:id="recYardsCol" prefWidth="33.0" text="recY" />
+                        <TableColumn fx:id="recTDCol" prefWidth="50.0" text="recTD" />
+                        <TableColumn fx:id="receptionsCol" prefWidth="32.0" text="rec" />
+                        <TableColumn fx:id="fumbleCol" prefWidth="50.0" text="fmb" />
+                    </columns>
+                  </TableView>
+                  <ComboBox fx:id="weekSelectorForStatTypeComboBox" layoutX="12.0" layoutY="75.0" prefWidth="150.0" promptText="Select Stat Category" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

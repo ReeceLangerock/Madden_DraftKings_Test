@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CFMFantasyPaneController">
+   <tabs>
+      <Tab fx:id="homeTab" closable="false" text="Home">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="369.0" layoutY="273.0" mnemonicParsing="false" text="Sign Out" />
+                  <Button layoutX="345.0" layoutY="191.0" mnemonicParsing="false" text="Change Password" />
+                  <Button layoutX="341.0" layoutY="146.0" mnemonicParsing="false" text="Change User Name" />
+                  <Button layoutX="356.0" layoutY="232.0" mnemonicParsing="false" text="Change Email" />
+               </children>
+            </AnchorPane>
+         </content></Tab>
+      <Tab closable="false" text="Build Team">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ToolBar layoutX="14.0" layoutY="61.0" prefHeight="40.0" prefWidth="241.0">
+                    <items>
+                      <Button fx:id="buildTabQBButton" mnemonicParsing="false" text="QB" />
+                        <Button fx:id="buildTabRBButton" mnemonicParsing="false" text="RB" />
+                        <Button fx:id="buildTabWRButton" mnemonicParsing="false" text="WR" />
+                        <Button fx:id="buildTabTEButton" mnemonicParsing="false" text="TE" />
+                        <Button fx:id="FLEX" mnemonicParsing="false" text="FLEX" />
+                        <Button fx:id="buildTabDSTButton" mnemonicParsing="false" text="DST" />
+                    </items>
+                  </ToolBar>
+                  <TextField fx:id="buildTabPlayerSearchField" layoutX="14.0" layoutY="29.0" prefHeight="25.0" prefWidth="242.0" promptText="Player Search" />
+                  <Label layoutX="463.0" layoutY="122.0" text="LINEUP">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="buildTabViewTeamTableView" layoutX="463.0" layoutY="148.0" prefHeight="265.0" prefWidth="320.0">
+                     <columns>
+                        <TableColumn fx:id="buildTabViewPosCol" prefWidth="30.0" text="Pos" />
+                        <TableColumn fx:id="buildTabViewPlayerNameCol" prefWidth="112.0" text="Player" />
+                        <TableColumn fx:id="buildTabViewOppCol" prefWidth="45.0" text="Opp" />
+                        <TableColumn fx:id="buildTabViewFPPGCol" prefWidth="51.0" text="FPPG" />
+                        <TableColumn fx:id="buildTabViewSalaryCol" prefWidth="67.0" text="Salary" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="buildTabClearButton" layoutX="465.0" layoutY="433.0" mnemonicParsing="false" text="Clear">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buildTabEnterLineupButton" layoutX="541.0" layoutY="433.0" mnemonicParsing="false" text="Enter Lineup">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="buildTabSelectTeamTableView" layoutX="14.0" layoutY="122.0" prefHeight="419.0" prefWidth="431.0">
+                    <columns>
+                      <TableColumn fx:id="buildTabSelectPosCol" editable="false" prefWidth="38.0" text="Pos" />
+                      <TableColumn fx:id="buildTabSelectPlayerNameCol" editable="false" prefWidth="117.0" text="Player Name" />
+                        <TableColumn fx:id="buildTabSelectOPPCol" editable="false" prefWidth="59.0" text="Opp" />
+                        <TableColumn fx:id="buildTabSelectOPRKCol" editable="false" prefWidth="64.0" text="OPRK" />
+                        <TableColumn fx:id="buildTabSelectFPPGCol" editable="false" prefWidth="71.0" text="FPPG" />
+                        <TableColumn fx:id="buildTabSelectSalaryCol" editable="false" prefWidth="81.0" text="Salary" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="RemSalaryLabelBuildTab" layoutX="673.0" layoutY="127.0" text="Rem. Salary:" />
+                  <Label fx:id="AvgRemPlayerLabelBuildTab" layoutX="638.0" layoutY="114.0" text="Avg. Rem. / Player:" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab closable="false" text="View Team">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Your Team For Week #">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="14.0" layoutY="58.0" prefHeight="331.0" prefWidth="332.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Position" />
+                      <TableColumn prefWidth="122.0" text="Name" />
+                        <TableColumn prefWidth="101.0" text="Points Scored" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Team History">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ComboBox layoutX="14.0" layoutY="14.0" prefWidth="150.0" promptText="Select Week" />
+                  <TableView layoutX="14.0" layoutY="54.0" prefHeight="303.0" prefWidth="363.0">
+                     <columns>
+                        <TableColumn prefWidth="30.0" text="Pos" />
+                        <TableColumn prefWidth="112.0" text="Player" />
+                        <TableColumn prefWidth="45.0" text="Opp" />
+                        <TableColumn prefWidth="51.0" text="FPPG" />
+                        <TableColumn prefWidth="67.0" text="Salary" />
+                     </columns>
+                  </TableView>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="This Week's Matchup">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView layoutX="14.0" layoutY="14.0" prefHeight="419.0" prefWidth="453.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Rank" />
+                      <TableColumn prefWidth="150.0" text="User Name" />
+                        <TableColumn minWidth="0.0" prefWidth="112.0" text="Team Points" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="View League">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="viewLeagueTabTableview" layoutX="14.0" layoutY="14.0" prefHeight="419.0" prefWidth="453.0">
+                     <columns>
+                        <TableColumn fx:id="viewLeagueTabUserNameCol" prefWidth="136.0" text="User Name" />
+                        <TableColumn fx:id="viewLeagueTabTotalPointsCol" minWidth="0.0" prefWidth="77.0" text="Total Points" />
+                        <TableColumn fx:id="viewLeagueTabAvgPointsCol" prefWidth="107.0" text="Average Points" />
+                        <TableColumn fx:id="viewLeagueTabWeeksPlayedCol" prefWidth="92.0" text="Weeks Played" />
+                     </columns>
+                  </TableView>
+                  <TextArea fx:id="viewLeagueTabHighestScoringTextArea" layoutX="497.0" layoutY="38.0" prefHeight="337.0" prefWidth="279.0" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</TabPane>
